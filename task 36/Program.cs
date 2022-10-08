@@ -18,7 +18,10 @@ void FillArrayRandomNumbers(int[] numbers)
 void PrintArray(int[] numbers)
 {
     Console.Write("[ ");
-    for (int i = 0; i < numbers.Length; i++);
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        Console.Write(numbers[i] + " ");
+    }
+    Console.Write("]");
+    Console.WriteLine();
 }
-Console.Write("]");
-Console.WriteLine();
