@@ -1,15 +1,18 @@
-﻿int m = InputInt("Введите M: ");
-int n = InputInt("Введите N: ");
-Console.WriteLine($"Сумма элементов от {m} до {n} = {CountNaturalSum(m, n)}");
+﻿Console.WriteLine("Введите начальное число M:");
+int numberM = int.Parse(Console.ReadLine());
 
-int InputInt(string output)
+Console.WriteLine("Введите начальное число M:");
+int numberN = int.Parse(Console.ReadLine());
+
+void GapNumberSum (int numberM, int numberN, int sum)
 {
-    Console.Write(output);
-    return int.Parse(Console.ReadLine());
+    if (numberM > numberN) 
+    {
+        Console.WriteLine($"Сумма натуральных элементов в промежутке от M до N: {sum}"); 
+        return;
+    }
+    sum = sum + (numberM++);
+    GapNumberSum(numberM, numberN, sum);
 }
-int CountNaturalSum(int m, int n)
-{
-    if (m == n)
-        return n;
-    return n + CountNaturalSum(m, n - 1);
-}
+
+GapNumberSum(numberM, numberN, 0);
